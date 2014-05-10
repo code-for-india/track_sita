@@ -33,6 +33,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/school/:schoolId', school.getSchool);
+app.get('/sita', routes.sita);
+app.get('/contact', routes.contact);
 app.post('/upload', fileUpload.handleFileUpload);
 
 http.createServer(app).listen(app.get('port'), function(){

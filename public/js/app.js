@@ -90,11 +90,13 @@ function createMarker(school, showPopUp){
             for (i=0; i< rating; i++){
               ratingHtml+= '<span>☆</span>';
             }
+            var noPosts = school.posts.length || 0;
+
             ratingHtml+= '</div>';
 
               var content  = '<div class="image"><img src="/images/school.jpg"></div><div class="details"><h5><a href="/school/' + 
             school.id + '">' + (school['name'] || 'Test') + ', Rajpat</a></h5><hr>' + 
-            '<span># of posts: </span> <span>25</span><br><span>Rating :</span>' + 
+            '<span># of posts: </span> <span>' + noPosts + '</span><br><span>Rating :</span>' + 
             ratingHtml;
 
               infowindow.setContent(content);

@@ -12,3 +12,11 @@ exports.index = function(req, res){
   		res.render('index', { mapData: map_data});
 	});
 };
+
+exports.sita = function(req, res){
+	res.render('sita');
+};
+
+exports.contact = function(req, res){
+	res.render('contact');
+}
