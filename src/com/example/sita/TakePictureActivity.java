@@ -47,7 +47,8 @@ public class TakePictureActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_take_picture);
 		
-		
+		// Do the gallery part at last.
+		// Load all images in SITA/date_time folder.
 		Gallery gallery = (Gallery) findViewById(R.id.gallery1);
 		takePicture = (Button) findViewById(R.id.button_take_image);
 		back = (Button) findViewById(R.id.button_back_take_image);
@@ -94,9 +95,11 @@ public class TakePictureActivity extends Activity {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		//fileUri = getOutputMediaFileUri (MEDIA_TYPE_IMAGE);
 		//intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-		File sitaFolder = new File(Environment.getExternalStorageDirectory(),"SITA");
+		File sitaFolder = new File(Environment.getExternalStorageDirectory(),"SITA/" + (Integer.toString(GlobalVars.school_id))+"_"+Long.toString(GlobalVars.date_time));
 		sitaFolder.mkdirs();
-		File image = new File(sitaFolder, "img1.jpg");
+		String imagename = Integer.toString(GlobalVars.school_id)+"_"+ Long.toString(System.currentTimeMillis()/1000)+".jpg";
+		
+		File image = new File(sitaFolder, imagename);
 		
 		Uri uriSavedImage = Uri.fromFile(image);
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
@@ -106,7 +109,7 @@ public class TakePictureActivity extends Activity {
 		
 		
 	}
-	// useless shit: -remove if it bugs
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    // if the result is capturing Image

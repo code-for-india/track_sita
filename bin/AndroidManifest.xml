@@ -55,6 +55,10 @@
             android:name="com.example.sita.StartActivity"
             android:label="@string/title_activity_start" >
         </activity>
+        <activity
+            android:name="com.example.sita.PushToServerActivity"
+            android:label="@string/title_activity_push_to_server" >
+        </activity>
     </application>
 
 </manifest>

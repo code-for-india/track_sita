@@ -10,5 +10,6 @@
     <string name="title_activity_review">ReviewActivity</string>
     <string name="title_activity_submit">SubmitActivity</string>
     <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_push_to_server">PushToServerActivity</string>
 
 </resources>
