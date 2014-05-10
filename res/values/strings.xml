@@ -9,5 +9,6 @@
     <string name="title_activity_place">PlaceActivity</string>
     <string name="title_activity_review">ReviewActivity</string>
     <string name="title_activity_submit">SubmitActivity</string>
+    <string name="title_activity_start">StartActivity</string>
 
 </resources>

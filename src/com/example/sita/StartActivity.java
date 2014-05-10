@@ -1,19 +1,14 @@
 package com.example.sita;
 
-
 import android.os.Bundle;
 import android.app.Activity;
-
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
-	
-	
-	
+public class StartActivity extends Activity {
 	Button collect, submit;
 
 	@Override
@@ -22,14 +17,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		collect = (Button) findViewById(R.id.button_collect_main);
 		submit = (Button) findViewById(R.id.button_submit_main);
-		GlobalVars.date_time = System.currentTimeMillis()/1000;
 		
 		
 		collect.setOnClickListener(new OnClickListener()
     	{
     		public void onClick(View v)
     		{
-    			Intent intent = new Intent (MainActivity.this,SchoolSelectActivity.class);
+    			Intent intent = new Intent (StartActivity.this,SchoolSelectActivity.class);
     			startActivity(intent);
     		}
     		
@@ -39,7 +33,7 @@ public class MainActivity extends Activity {
     	{
     		public void onClick(View v)
     		{
-    			Intent intent = new Intent (MainActivity.this,SubmitActivity.class);
+    			Intent intent = new Intent (StartActivity.this,SubmitActivity.class);
     			startActivity(intent);
     		}
     		
@@ -54,5 +48,4 @@ public class MainActivity extends Activity {
 	}
 
 }
-
 

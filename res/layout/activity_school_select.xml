@@ -8,12 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SchoolSelectActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select School" />
-
     <Button
         android:id="@+id/back_school_select"
         android:layout_width="120dp"
@@ -47,5 +41,24 @@
         android:text="NEXT"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinner1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="62dp"
+        android:text="Select School" />
+
+    <TextView
+        android:id="@+id/temptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/back_school_select"
+        android:layout_alignRight="@+id/back_school_select"
+        android:layout_marginBottom="66dp"
+        android:layout_marginRight="14dp"
+        android:text="TextView" />
 
 </RelativeLayout>

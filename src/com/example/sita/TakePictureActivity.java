@@ -71,7 +71,7 @@ public class TakePictureActivity extends Activity {
 	    	{
 	    		public void onClick(View v)
 	    		{
-	    			Intent intent = new Intent (TakePictureActivity.this,PlaceActivity.class);
+	    			Intent intent = new Intent (TakePictureActivity.this,ReviewActivity.class);
 	    			startActivity(intent);
 	    		}
 	    		
@@ -81,7 +81,7 @@ public class TakePictureActivity extends Activity {
 	    	{
 	    		public void onClick(View v)
 	    		{
-	    			Intent intent = new Intent (TakePictureActivity.this,SchoolSelectActivity.class);
+	    			Intent intent = new Intent (TakePictureActivity.this,PlaceActivity.class);
 	    			startActivity(intent);
 	    		}
 	    		
@@ -96,7 +96,7 @@ public class TakePictureActivity extends Activity {
 		//intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
 		File sitaFolder = new File(Environment.getExternalStorageDirectory(),"SITA");
 		sitaFolder.mkdirs();
-		File image = new File(sitaFolder, "img.jpg");
+		File image = new File(sitaFolder, "img1.jpg");
 		
 		Uri uriSavedImage = Uri.fromFile(image);
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
