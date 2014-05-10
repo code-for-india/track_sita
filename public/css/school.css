@@ -1,0 +1,35 @@
+html, body {height: 100%;}
+
+.map-wrapper {margin: 10px auto;height: inherit;}
+.map-wrapper #map_canvas {height: 300px;}
+
+
+div.rating {
+    display: inline;
+}
+div.rating-wrapper label {
+    display: inline;
+    margin-right: 10px;
+}
+.image-container div.item {
+    display: inline-block;
+    margin:10px;
+}
+div.filters {
+    margin-top: 10px;
+}
+div.photos {
+	text-align: center;
+}
+div.filters label {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+div.no-images {
+    text-align: center;
+}
+.image-container .item img {
+    width: 250px;
+    height: 200px;
+}

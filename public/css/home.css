@@ -1,0 +1,25 @@
+.map-wrapper {margin: 0 auto;height: inherit;}
+.map-wrapper #map_canvas {height: 80%;}
+
+div.image {
+    float: left;
+}
+div.image img {
+    width: 80px;
+    height: 80px;
+    padding-right: 10px;
+}
+
+div.details {float: right;font-size: 13px;}
+div.details label {
+    display: inline-block;
+}
+.details a {color: rgb(81, 81, 173);}
+.details h5 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.details hr {margin: 0px;}
+.details div.rating {
+    display: inline;
+}
