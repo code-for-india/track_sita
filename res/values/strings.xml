@@ -11,5 +11,6 @@
     <string name="title_activity_submit">SubmitActivity</string>
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_push_to_server">PushToServerActivity</string>
+    <string name="title_activity_save_to_local">SaveToLocalActivity</string>
 
 </resources>

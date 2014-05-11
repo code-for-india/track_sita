@@ -59,6 +59,10 @@
             android:name="com.example.sita.PushToServerActivity"
             android:label="@string/title_activity_push_to_server" >
         </activity>
+        <activity
+            android:name="com.example.sita.SaveToLocalActivity"
+            android:label="@string/title_activity_save_to_local" >
+        </activity>
     </application>
 
 </manifest>

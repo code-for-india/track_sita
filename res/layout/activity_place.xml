@@ -9,41 +9,43 @@
     tools:context=".PlaceActivity" >
 
     <TextView
-        
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Place of Photograph" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/spinner_photographed_place"
+        android:layout_marginTop="62dp"
+        android:text="Place of Photograph"
+        android:textSize="25dp" />
+    
+   
+    
+    
 
     <Spinner
         android:id="@+id/spinner_photographed_place"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:spinnerMode="dropdown"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="48dp" />
+    
+     
 
     <Button
-        android:id="@+id/button_back_place"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/spinner_photographed_place"
+        android:id="@+id/next_place"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/buttonshapesmallred"
-        android:text="BACK"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/button_next_place"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/button_back_place"
-        android:layout_alignBottom="@+id/button_back_place"
-        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/buttonshapesmallgreen"
         android:text="NEXT"
         android:textColor="#FFFFFF"
-        android:textSize="15sp" />
+        android:textSize="20sp" />
+    
+  
 
 </RelativeLayout>

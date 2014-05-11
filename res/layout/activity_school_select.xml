@@ -8,57 +8,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SchoolSelectActivity" >
 
-    <Button
-        android:id="@+id/back_school_select"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="29dp"
-        android:background="@drawable/buttonshapesmallred"
-        
-        android:text="BACK"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="58dp"
+        android:text="Select School"
+        android:textSize="25dp" />
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="48dp" 
-        android:spinnerMode="dropdown"
-        />
+        android:layout_marginTop="27dp"
+        android:spinnerMode="dropdown" />
 
     <Button
         android:id="@+id/next_school_select"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_alignRight="@+id/spinner1"
-        android:layout_alignTop="@+id/back_school_select"
-        android:layout_marginRight="16dp"
+        android:layout_alignLeft="@+id/spinner1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="64dp"
         android:background="@drawable/buttonshapesmallgreen"
         android:text="NEXT"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spinner1"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp"
-        android:text="Select School" />
-
-    <TextView
-        android:id="@+id/temptext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/back_school_select"
-        android:layout_alignRight="@+id/back_school_select"
-        android:layout_marginBottom="66dp"
-        android:layout_marginRight="14dp"
-        android:text="TextView" />
 
 </RelativeLayout>

@@ -12,59 +12,50 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rating" />
+        android:text="Rating" 
+        android:textSize="25dp"
+        />
 
     <RatingBar
         android:id="@+id/ratingBar1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editText1"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="17dp" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:minLines="5" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/ratingBar1"
         android:layout_below="@+id/ratingBar1"
-        android:layout_marginTop="48dp"
-        android:text="Review" />
+        android:layout_marginTop="26dp"
+        android:text="Review"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/reviewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:minLines="5"
+        android:gravity="top"
+        android:hint="Enter your Review/Feedback/Comment about the Infrastructure Captured..."
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/button_save_final"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/ratingBar1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="47dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/reviewText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
         android:background="@drawable/buttonshapesmallgreen"
-        android:text="SAVE"
+        android:text="COMPLETE"
         android:textColor="#FFFFFF"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/button_submit_final"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/button_save_final"
-        android:layout_alignBottom="@+id/button_save_final"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@+id/button_save_final"
-        android:background="@drawable/buttonshapesmallgreen"
-        android:text="SUBMIT"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp" />
+        android:textSize="20sp" />
 
 </RelativeLayout>

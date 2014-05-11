@@ -49,13 +49,13 @@ public class TakePictureActivity extends Activity {
 		
 		// Do the gallery part at last.
 		// Load all images in SITA/date_time folder.
-		Gallery gallery = (Gallery) findViewById(R.id.gallery1);
+		//Gallery gallery = (Gallery) findViewById(R.id.gallery1);
 		takePicture = (Button) findViewById(R.id.button_take_image);
-		back = (Button) findViewById(R.id.button_back_take_image);
+		//back = (Button) findViewById(R.id.button_back_take_image);
 		next = (Button) findViewById(R.id.button_next_take_image);
 		
-		gallery.setSpacing(1);
-		gallery.setAdapter(new GalleryImageAdapter(this));
+//		gallery.setSpacing(1);
+//		gallery.setAdapter(new GalleryImageAdapter(this));
 		
 		 takePicture.setOnClickListener(new View.OnClickListener() {
 			 
@@ -64,7 +64,7 @@ public class TakePictureActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				captureImage();
-				// reload this activity probably! ensure session variables are intact!
+				
 			}
 		});
 		 
@@ -78,15 +78,15 @@ public class TakePictureActivity extends Activity {
 	    		
 	    	});
 		 
-		 back.setOnClickListener(new OnClickListener()
-	    	{
-	    		public void onClick(View v)
-	    		{
-	    			Intent intent = new Intent (TakePictureActivity.this,PlaceActivity.class);
-	    			startActivity(intent);
-	    		}
-	    		
-	    	});
+//		 back.setOnClickListener(new OnClickListener()
+//	    	{
+//	    		public void onClick(View v)
+//	    		{
+//	    			Intent intent = new Intent (TakePictureActivity.this,PlaceActivity.class);
+//	    			startActivity(intent);
+//	    		}
+//	    		
+//	    	});
 		
 	} 
 
@@ -97,13 +97,14 @@ public class TakePictureActivity extends Activity {
 		//intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
 		File sitaFolder = new File(Environment.getExternalStorageDirectory(),"SITA/" + (Integer.toString(GlobalVars.school_id))+"_"+Long.toString(GlobalVars.date_time));
 		sitaFolder.mkdirs();
-		String imagename = Integer.toString(GlobalVars.school_id)+"_"+ Long.toString(System.currentTimeMillis()/1000)+".jpg";
+		String imagename = Integer.toString(GlobalVars.school_id)+ "_"+ Long.toString(System.currentTimeMillis()/1000)+".jpg";
 		
 		File image = new File(sitaFolder, imagename);
 		
 		Uri uriSavedImage = Uri.fromFile(image);
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
 		
+		GlobalVars.imagePaths.add(imagename);
 		
 		startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
 		
@@ -119,6 +120,10 @@ public class TakePictureActivity extends Activity {
 	            // display it in image view
 	          //  previewCapturedImage();
 	        	// gallery has to load all images from directory
+	        	Toast.makeText(getApplicationContext(),
+	                    "Tap TAKE PICTURE to take more Photos", Toast.LENGTH_SHORT)
+	                    .show();
+	        	
 	        } else if (resultCode == RESULT_CANCELED) {
 	            // user cancelled Image capture
 	            Toast.makeText(getApplicationContext(),

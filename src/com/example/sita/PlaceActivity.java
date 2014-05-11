@@ -24,8 +24,8 @@ public class PlaceActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place);
  
-		next = (Button) findViewById(R.id.button_next_place);
- 		back = (Button) findViewById(R.id.button_back_place);
+		next = (Button) findViewById(R.id.next_place);
+ 		//back = (Button) findViewById(R.id.button_back_place);
  		
 		Spinner dropdown = (Spinner) findViewById(R.id.spinner_photographed_place);
 		ArrayList<String> options = new ArrayList<String>();
@@ -37,6 +37,7 @@ public class PlaceActivity extends Activity {
 		dropdown.setAdapter(adapter);
 		
 		pos = (int) dropdown.getSelectedItemPosition();
+		pos = pos +1;
 		
 		dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() 
 		{
@@ -66,15 +67,15 @@ public class PlaceActivity extends Activity {
     		
     	});
 		
-		back.setOnClickListener(new OnClickListener()
-    	{
-    		public void onClick(View v)
-    		{
-    			Intent intent = new Intent (PlaceActivity.this,SchoolSelectActivity.class);
-    			startActivity(intent);
-    		}
-    		
-    	});
+//		back.setOnClickListener(new OnClickListener()
+//    	{
+//    		public void onClick(View v)
+//    		{
+//    			Intent intent = new Intent (PlaceActivity.this,MainActivity.class);
+//    			startActivity(intent);
+//    		}
+//    		
+//    	});
 		
 	}
 
