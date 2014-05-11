@@ -1,0 +1,25 @@
+html, body {height: 100%;}
+.navbar {margin-bottom: 0px;}
+
+ul.nav.pull-right.search {}
+ul.nav.pull-right.search form {margin-bottom: 0px; margin-top: 5px;}
+ul.nav.pull-right.search form a{margin-top:0px}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:before,
+.rating > span ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+*[data-toggle="tooltip"] {
+    border-bottom: 1px dotted #888;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width,initial-scale=1.0">
+  <title> SITA - School <%= school.name %> - <%= school.district %>
+  </title>
+  <% include header.html %>
+  <link rel="stylesheet" href="/css/school.css">
+  <link
+
+ 
+ <div class="navbar ">
+  <div class="navbar-inner">
+ 
+    <ul class="nav">
+     	<li  id="index"><a href="/">SITA</a></li>     
+    </ul>
+
+   <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/sita">What is SITA?</a></li>
+        <li><a href="/contact">Contact</a></li>
+	</ul>
+</div>
+</div>
+  
+</head>  
+<body>  
+	
+	<div class="row-fluid school-data well">
+		<div class="span6">
+			<h3><%= school.name %></h3>
+			<div id="school_address"></div>
+			<br>
+			<div class="rating-wrapper">
+				<label id="rating" data-toggle="tooltip" title="Aggregated value of Rating from all the posts" > Rating :</label>
+				<div class="rating">
+					<% for (var i=0; i < 2; i++) {%>
+						<span>☆</span>
+					<% } %>
+				</div>
+			</div>
+			<div class="filters">
+  				<span>Filter the phots by the category</span><br>
+				
+			</div>
+
+		</div>
+		<div class="span6">
+			<div class="map-wrapper">
+				<div id="map_canvas"></div> 
+			</div>
+		</div>	
+	</div>
+	
+	<div class="photos">
+		<h2>Photos related to this school</h2>
+		<div class="image-container">
+
+		</div>
+		<div class="no-images well" style="display:none">
+			No photos are available with the selected tag
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+	var school = <%- JSON.stringify(school) %>;
+</script>
+
+<footer id="footer ">
+    <p class="pull-right"><a>&copy; All Rights Reserved</a></p>
+    <div class="links">
+      	<a href="home.html">Followus </a>| 
+		<a href="contest.html">Like us</a>|
+		<a href="rank.html">Contribute</a>| 
+	</div>	  
+</footer>
+
+<script type="text/javascript" src="/js/isotope.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
+<script type="text/javascript" src="/js/school.js"></script>
+</body>  
+</html>
