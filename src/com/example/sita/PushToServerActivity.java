@@ -68,7 +68,7 @@ public class PushToServerActivity extends Activity {
                              }
                              
                              
-                            /* upLoadServerUri = "http://secret-basin-2251.herokuapp.com/upload";*/
+                             upLoadServerUri = "http://secret-basin-2251.herokuapp.com/upload";
                              uploadFile(uploadFilePath + "data.json");
                              
                                                       

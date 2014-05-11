@@ -1,9 +1,6 @@
 package com.example.sita;
 
 import java.util.ArrayList;
-
-
-
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -12,15 +9,13 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 public class MainActivity extends Activity  implements LocationListener  {
@@ -33,67 +28,43 @@ public class MainActivity extends Activity  implements LocationListener  {
 	DBAdapter schoolInfo = new DBAdapter(this);;
 	ArrayList <Integer> optionId;
 	
-	int pos;
-	
+	int pos;	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-		
 	    Criteria criteria = new Criteria();
 	    provider = locationManager.getBestProvider(criteria, false);
 	    Location location = locationManager.getLastKnownLocation(provider);
-	    
 	    Spinner dropdown = (Spinner) findViewById(R.id.spinner1);
 		ArrayList<String> options = new ArrayList<String>();
 		optionId = new ArrayList<Integer>();
 		
-	    
-	    
-		
+	    		
 		if(location!=null)
 		{
-			/*float lat = (float) (location.getLatitude());
-		    float lng = (float) (location.getLongitude());
-		    
-		    schoolInfo.open();		    
-		    schoolList = schoolInfo.getNearBySchools(lat, lng);
-		    schoolInfo.close();*/
-			
 			onLocationChanged(location);
-		    
 		}
 		
 		else
 		{
 			schoolList = new ArrayList<SchoolIdName>();
-			//options.add("Location Not Set!");
 		}
-		
-		
-		
-		
-		
-		
+	
 		next = (Button) findViewById(R.id.next_school_select);
 		
 		for( int i =0; i< schoolList.size();i++)
 		{
 			options.add((String)schoolList.get(i).getSchoolName());
 			optionId.add((int)schoolList.get(i).getSchoolId());
-			//options.add("Hello");
-			
 		}
 		
 		// this will come after seeing current location and judging nearby schools!
 		//each school has unique id.
-		//options.add("opt 1");
-		//options.add("opt 2");
+		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,options);
 		dropdown.setAdapter(adapter);
 		
@@ -163,6 +134,7 @@ public class MainActivity extends Activity  implements LocationListener  {
 		
 		float lat = (float) (location.getLatitude());
 	    float lng = (float) (location.getLongitude());
+	   
 	    schoolInfo.open();
 	    schoolInfo.fillDB();
 	    schoolList = schoolInfo.getNearBySchools(lat, lng);

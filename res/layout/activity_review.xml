@@ -23,16 +23,6 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ratingBar1"
-        android:layout_below="@+id/ratingBar1"
-        android:layout_marginTop="26dp"
-        android:text="Review"
-        android:textSize="25dp" />
-
     <EditText
         android:id="@+id/reviewText"
         android:layout_width="match_parent"
@@ -41,10 +31,18 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="22dp"
         android:ems="10"
-        android:minLines="5"
+        android:minLines="3"
         android:gravity="top"
         android:hint="Enter your Review/Feedback/Comment about the Infrastructure Captured..."
         android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar1"
+        android:text="Review"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/button_save_final"
@@ -52,7 +50,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/reviewText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/buttonshapesmallgreen"
         android:text="COMPLETE"
         android:textColor="#FFFFFF"

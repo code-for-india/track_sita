@@ -57,7 +57,7 @@ public class DBAdapter {
 					);
 			//String sql = "INSERT INTO "+ TABLE_SCHOOL + " ("+ KEY_SCHOOL_ID +", "+ KEY_SCHOOL_NAME + ", " + KEY_SCHOOL_LAT +", " + KEY_SCHOOL_LONG +") values (1001,'Google Test School',12.9959,77.6636);";
 			
-			// db.execSQL(sql);
+			// db.execSQL(sql); ^ painful to write!
 		}
 
 		@Override
@@ -83,7 +83,8 @@ public class DBAdapter {
 	}
 	
 	public void fillDB()	// this has finally go into onCreate method! // inefficient for production!
-	{
+	{							// okay to use in testing. // in production, need to sync with a central server occassionally.
+								// school name and geolocation can be crowd-sourced.
 		ourDatabase.delete(TABLE_SCHOOL, null, null);
 		ContentValues cv = new ContentValues();
 		
@@ -116,12 +117,6 @@ public class DBAdapter {
 		cv.put(KEY_SCHOOL_LAT, 12.994665 );
 		cv.put(KEY_SCHOOL_LONG, 77.6638908);
 		ourDatabase.insert(TABLE_SCHOOL, null,cv);
-		
-		
-		
-		
-		
-		
 		
 		
 	}
