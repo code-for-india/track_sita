@@ -21,6 +21,11 @@ var getSchool = function(req, res){
 			}
 			var map_data = data;
 			console.log(map_data);
+			var total = 0;
+			data.posts.forEach(function(post){
+				total+= parseFloat(post.rating) || 0;
+			});
+			data.rating = total/data.posts.length;
 	  		res.render('school', { school: data});
 		}
 	);

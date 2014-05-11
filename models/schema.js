@@ -9,17 +9,18 @@ var SchoolSchema = new Schema({
   name: String,
   lat: String,
   lon: String,
-  rating: Number
+  rating: String,
+  posts: [PostScheme]
 });
 
 var PostScheme = new Schema({
   id: { type: String, required: true, unique: true, trim: true },
   images: [String],
   type: String,
-  rating: Number,
+  rating: String,
   comment: String,
   review: String,
-  type: {enum: ['toilet', 'playground', 'classroom', 'water', 'library']},
+  type: String,
 });
 
 SchoolSchema.statics.getAllSchools = function(){
@@ -36,5 +37,6 @@ SchoolSchema.statics.getAllSchools = function(){
 };
 
 var School = mongoose.model('Schools', SchoolSchema);
-  
+
+exports.PostScheme = PostScheme;  
 exports.School = School;

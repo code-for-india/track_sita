@@ -35,7 +35,7 @@ app.get('/', routes.index);
 app.get('/school/:schoolId', school.getSchool);
 app.get('/sita', routes.sita);
 app.get('/contact', routes.contact);
-app.post('/upload', fileUpload.handleFileUpload);
+app.post('/upload', fileUpload.upload);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
