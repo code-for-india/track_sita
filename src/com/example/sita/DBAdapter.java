@@ -86,29 +86,38 @@ public class DBAdapter {
 	{
 		ourDatabase.delete(TABLE_SCHOOL, null, null);
 		ContentValues cv = new ContentValues();
+		
 		cv.put(KEY_SCHOOL_ID, 1001);
-		cv.put(KEY_SCHOOL_NAME, "Google");
+		cv.put(KEY_SCHOOL_NAME, "Google Bangalore");
 		cv.put(KEY_SCHOOL_LAT, 12.9959 );
 		cv.put(KEY_SCHOOL_LONG, 77.6636);
 		ourDatabase.insert(TABLE_SCHOOL, null,cv);
 		
 		cv.put(KEY_SCHOOL_ID, 1002);
-		cv.put(KEY_SCHOOL_NAME, "Some Other Address");
-		cv.put(KEY_SCHOOL_LAT, 22.9959 );
-		cv.put(KEY_SCHOOL_LONG, 77.6636);
+		cv.put(KEY_SCHOOL_NAME, "Chinmaya Vidyalaya");
+		cv.put(KEY_SCHOOL_LAT, 23.666468 );
+		cv.put(KEY_SCHOOL_LONG, 86.168659);
 		ourDatabase.insert(TABLE_SCHOOL, null,cv);
 		
 		cv.put(KEY_SCHOOL_ID, 1003);
-		cv.put(KEY_SCHOOL_NAME, "Far from Google");
-		cv.put(KEY_SCHOOL_LAT, 22.7959 );
-		cv.put(KEY_SCHOOL_LONG, 77.8636);
+		cv.put(KEY_SCHOOL_NAME, "DPS Electronic City");
+		cv.put(KEY_SCHOOL_LAT, 12.843373 );
+		cv.put(KEY_SCHOOL_LONG, 77.635113);
 		ourDatabase.insert(TABLE_SCHOOL, null,cv);
 		
 		cv.put(KEY_SCHOOL_ID, 1004);
-		cv.put(KEY_SCHOOL_NAME, "Near to Google");
-		cv.put(KEY_SCHOOL_LAT, 13.0059 );
-		cv.put(KEY_SCHOOL_LONG, 77.5636);
+		cv.put(KEY_SCHOOL_NAME, "St German School");
+		cv.put(KEY_SCHOOL_LAT, 12.993722 );
+		cv.put(KEY_SCHOOL_LONG, 77.609776);
 		ourDatabase.insert(TABLE_SCHOOL, null,cv);
+		
+		cv.put(KEY_SCHOOL_ID, 1005);
+		cv.put(KEY_SCHOOL_NAME, "Government Middle School");
+		cv.put(KEY_SCHOOL_LAT, 12.994665 );
+		cv.put(KEY_SCHOOL_LONG, 77.6638908);
+		ourDatabase.insert(TABLE_SCHOOL, null,cv);
+		
+		
 		
 		
 		
@@ -122,10 +131,10 @@ public class DBAdapter {
 		String[] columns = { KEY_SCHOOL_ID, KEY_SCHOOL_NAME, KEY_SCHOOL_LAT, KEY_SCHOOL_LONG};
 		
 		
-		Cursor c = ourDatabase.query(TABLE_SCHOOL, columns, "((("+ KEY_SCHOOL_LAT + " < " +	Float.toString((float) (actualLat +0.5)) + ") " +
-															   " AND (" + KEY_SCHOOL_LAT + " > " + Float.toString((float) (actualLat -0.5))+"))" +
-															   " AND (("+ KEY_SCHOOL_LONG + " < " + Float.toString((float) (actualLong +0.5)) + ") " +
-															   "AND (" + KEY_SCHOOL_LONG + " > " + Float.toString((float) (actualLong -0.5))+")))"  , null, null, null, null);
+		Cursor c = ourDatabase.query(TABLE_SCHOOL, columns, "((("+ KEY_SCHOOL_LAT + " < " +	Float.toString((float) (actualLat +0.01)) + ") " +
+															   " AND (" + KEY_SCHOOL_LAT + " > " + Float.toString((float) (actualLat -0.01))+"))" +
+															   " AND (("+ KEY_SCHOOL_LONG + " < " + Float.toString((float) (actualLong +0.01)) + ") " +
+															   "AND (" + KEY_SCHOOL_LONG + " > " + Float.toString((float) (actualLong -0.01))+")))"  , null, null, null, null);
 		
 		
 		//Cursor c = ourDatabase.query(TABLE_SCHOOL, columns,null , null, null, null, null);
